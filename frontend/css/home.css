@@ -1,0 +1,77 @@
+.tela-inicial {
+  background-color: #f1f1f1;
+  width: 100%;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+  font-family: "Kaisei HarunoUmi-Regular", Helvetica;
+}
+
+/* logo + nome */
+.logo {
+  position: absolute;
+  top: 29px;
+  left: 104px;
+  width: 130px;
+  height: 130px;
+}
+
+.nome-app {
+  position: absolute;
+  top: 70px;
+  left: 240px;
+  font-size: 40px;
+  font-family: "Geist-Regular", Helvetica;
+}
+
+/* conteúdo central */
+.conteudo {
+  position: absolute;
+  top: 210px;
+  left: 110px;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+.textos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo {
+  font-size: 72px;
+  font-family: "Italic Outline Art-Regular", Helvetica;
+}
+
+.sub {
+  font-size: 28px;
+  width: 460px;
+  line-height: 38px;
+}
+
+.botoes {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.botao {
+  background-color: #71b1c2;
+  width: 320px;
+  height: 80px;
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #000;
+}
+
+.imagem {
+  width: 520px;
+  height: auto;
+  margin-left: 80px;
+}

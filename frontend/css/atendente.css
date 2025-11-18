@@ -1,0 +1,69 @@
+.tela-atendente {
+  background: #f1f1f1;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  width: 130px;
+}
+
+.marca {
+  position: absolute;
+  top: 70px;
+  left: 240px;
+  font-size: 40px;
+  font-family: "Geist-Regular";
+}
+
+.titulo {
+  position: absolute;
+  top: 160px;
+  width: 100%;
+  text-align: center;
+  font-size: 70px;
+  font-family: "Italic Outline Art-Regular";
+}
+
+.fila-card {
+  position: absolute;
+  top: 340px;
+  left: 220px;
+  width: 1000px;
+  height: 180px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px #0003;
+  font-size: 35px;
+  font-family: "Kaisei HarunoUmi-Regular";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chamar {
+  position: absolute;
+  top: 580px;
+  left: 500px;
+  width: 440px;
+  height: 120px;
+  background: #71b1c2;
+  border-radius: 200px;
+  font-size: 45px;
+}
+
+.ultimas {
+  position: absolute;
+  top: 760px;
+  left: 240px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 28px;
+  font-family: "Kaisei HarunoUmi-Regular";
+}

@@ -1,0 +1,27 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* fontes */
+@font-face {
+  font-family: "Kaisei HarunoUmi-Regular";
+  src: url("../fonts/KaiseiHarunoUmi-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Italic Outline Art-Regular";
+  src: url("../fonts/ItalicOutlineArt-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Geist-Regular";
+  src: url("../fonts/Geist-Regular.ttf") format("truetype");
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+}

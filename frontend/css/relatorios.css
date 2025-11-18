@@ -1,0 +1,51 @@
+.relatorios {
+  background: #f1f1f1;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  width: 130px;
+}
+
+.marca {
+  position: absolute;
+  top: 70px;
+  left: 240px;
+  font-size: 40px;
+  font-family: "Geist-Regular";
+}
+
+.titulo {
+  position: absolute;
+  top: 170px;
+  width: 100%;
+  text-align: center;
+  font-size: 70px;
+  font-family: "Italic Outline Art-Regular";
+}
+
+.filtros {
+  position: absolute;
+  top: 340px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#resultado {
+  position: absolute;
+  top: 420px;
+  left: 150px;
+  width: 1100px;
+  font-size: 30px;
+  font-family: "Kaisei HarunoUmi-Regular";
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
