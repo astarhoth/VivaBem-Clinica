@@ -1,0 +1,46 @@
+.geral {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+
+}
+
+.texto {
+  flex: 1;
+  text-align: left; /* deixa o texto alinhado à direita */
+  padding-right: 40px;
+}
+
+.texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.texto p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.texto button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.imagem {
+  flex: 1;
+}
+.geral .texto button{
+    background-color:#ADD8E6;
+    border: none;
+    border-radius:40px
+}
+
+.imagem img {
+  width: 100%;
+  max-width: 400px; /* controla o tamanho da imagem */
+  height: auto;
+  margin:0;
+  align-items: right; 
+ 
+}
