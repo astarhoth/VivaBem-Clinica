@@ -2,14 +2,17 @@
   display: flex;
   align-items: center; 
   justify-content: space-between;
+  background-color: rgb(224, 224, 224);
 
 }
 
 .texto {
   flex: 1;
   text-align: left; /* deixa o texto alinhado à direita */
-  padding-right: 40px;
+  margin-left: 30px;
+
 }
+
 
 .texto h2 {
   font-size: 2.5rem;
@@ -43,4 +46,25 @@
   margin:0;
   align-items: right; 
  
+}
+
+.final{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 200px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+.final h4{
+  font-size: 0.8rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.final button{
+    background-color:#ADD8E6;
+    border: none;
+    border-radius:40px;
+    padding: 10px 20px;
 }

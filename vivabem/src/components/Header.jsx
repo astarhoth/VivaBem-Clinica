@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="header">
-      <h1>Viva Bem</h1>
+      <h1 class="logo">Viva Bem</h1>
 
       <nav className="nav">
         <a href="#">Painel</a>
