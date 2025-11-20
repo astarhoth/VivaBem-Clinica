@@ -3,6 +3,7 @@ import Home from './pages/home.jsx';
 import Header from './components/Header.jsx';
 import './components/Header.css';
 import SelecionarSenha from "./pages/selecionarSenha.jsx";
+import ChamarPaciente from './pages/chamarPaciente/chamarPaciente.jsx'; 
 
 export default function App() {
 
@@ -23,6 +24,10 @@ export default function App() {
           path="/selecionar-senha"
           element={<SelecionarSenha onSelecionar={handleSelecionar} />}
         />
+
+        {/* Página Chamar Paciente */}
+        <Route path="/chamar-paciente" element={<ChamarPaciente />} />
+
       </Routes>
     </BrowserRouter>
   );
