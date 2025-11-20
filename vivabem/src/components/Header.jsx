@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header className="header">
-      <h1 class="logo">Viva Bem</h1>
+      <h1 className="logo">Viva Bem</h1>
 
       <nav className="nav">
-        <a href="#">Painel</a>
-        <a href="#">Gerar senha</a>
-        <a href="#">Chamar paciente</a>
+        <Link to="/">Painel</Link>
+        <Link to="/selecionar-senha">Gerar senha</Link>
+        <Link to="/chamar-paciente">Chamar paciente</Link>
       </nav>
     </header>
   );
