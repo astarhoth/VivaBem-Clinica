@@ -9,6 +9,7 @@ export default function Header() {
         <Link to="/">Painel</Link>
         <Link to="/selecionar-senha">Gerar senha</Link>
         <Link to="/chamar-paciente">Chamar paciente</Link>
+        <Link to="/senha-recepcionista">recepcionista</Link>
       </nav>
     </header>
   );

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+.chamar-paciente-container {
+  width: 100%;
+  min-height: calc(100vh - 80px); 
+  background-color: #EAEAEA; 
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px; 
+}
+
+.page-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+}
+
+/* --- layout --- */
+.chamar-paciente-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 50px;
+}
+
+/* colunas */
+.left-column, .right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* cards */
+.action-card, .queue-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 450px; 
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+/* --- painel de chamar --- */
+.ticket-display-box {
+    background-color: #E6E6E6; 
+    width: 100%;
+    padding: 40px 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.ticket-type {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    color: #555;
+}
+
+.ticket-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px; 
+}
+
+.btn-primary {
+    background-color: #ADD8E6; 
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #000;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #9ACFE0;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* --- fila --- */
+.queue-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+}
+
+.queue-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 10px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.queue-item:last-child {
+    border-bottom: none;
+}
+
+.q-code {
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    min-width: 60px;
+}
+
+.q-type {
+    flex: 1;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.q-status {
+    font-size: 0.8rem;
+    color: #666;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* responsividade */
+@media (max-width: 900px) {
+  .chamar-paciente-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-column, .right-column {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .action-card, .queue-card {
+      min-height: auto;
+  }
+}

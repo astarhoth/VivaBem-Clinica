@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home.jsx';
 import Header from './components/Header.jsx';
 import './components/Header.css';
-import SelecionarSenha from "./pages/selecionarSenha.jsx";
+import SelecionarSenha from "./pages/selecionarSenha/selecionarSenha.jsx";
 import ChamarPaciente from './pages/chamarPaciente/chamarPaciente.jsx'; 
+import SenhaRecepcionista from "./pages/senhaRecepcionista/senhaRecepcionista.jsx";
 
 // --- GERADOR DE SENHAS ---
 const contadores = {
@@ -60,6 +61,9 @@ const handleSelecionar = (tipo) => {
         {/* Página Chamar Paciente */}
         <Route path="/chamar-paciente" element={<ChamarPaciente />} />
 
+        {/* Rota Senha Recepcionista*/}
+        <Route path="/senha-recepcionista" element={<SenhaRecepcionista />} />
+    
       </Routes>
     </BrowserRouter>
   );
