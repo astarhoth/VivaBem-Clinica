@@ -33,13 +33,13 @@ body {
   justify-content: center;
 }
 
-.title {
-  text-align: center;
+.container .title {
+ 
   width: 1049px;
   height: 141px;
-  top: 218px;
-  left: 195px;
-  padding-top: 100px;
+ margin-left: auto;
+ margin-right: auto;
+  text-align: center;
   font-size: 38px;
   margin-bottom: 50px;
   color: #222;

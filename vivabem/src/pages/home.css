@@ -1,7 +1,7 @@
 .geral {
   display: flex;
   align-items: center; 
-  justify-content: space-between;
+ 
   background-color: rgb(224, 224, 224);
 
 }
@@ -30,21 +30,18 @@
   cursor: pointer;
 }
 
-.imagem {
-  flex: 1;
-}
+
 .geral .texto button{
     background-color:#ADD8E6;
     border: none;
     border-radius:40px
 }
 
-.imagem img {
+.geral .imagem img {
   width: 100%;
   max-width: 400px; /* controla o tamanho da imagem */
   height: auto;
-  margin:0;
-  align-items: right; 
+
  
 }
 
