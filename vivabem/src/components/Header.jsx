@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/Logo.png'
+import telaPrincipal from '../pages/home.jsx'
 
 export default function Header() {
   return (
     <header className="header">
-      <h1 className="logo">Viva Bem</h1>
+      <div className="logo">
+          <img src={logo} alt="" />
+          <a href={telaPrincipal}><h1 className="logo_nome">Viva Bem</h1> </a>  
+      </div>
 
-      <nav className="nav">
-        <Link to="/">Painel</Link>
+
+       <nav className="nav">
         <Link to="/selecionar-senha">Gerar senha</Link>
         <Link to="/chamar-paciente">Chamar paciente</Link>
-        <Link to="/senha-recepcionista">recepcionista</Link>
-      </nav>
+        <Link to="/senha-recepcionista">Recepcionista</Link>
+      </nav> 
     </header>
   );
 }

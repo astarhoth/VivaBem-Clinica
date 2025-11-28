@@ -6,10 +6,12 @@ body {
   padding: 0;
 }
 
+
 body {
   display: block !important;
   background: #f3f3f3;
 }
+
 
 .container {
   width: 100%;
@@ -17,6 +19,7 @@ body {
   font-family: "Inter", sans-serif;
   padding-top: 73px; /* opcional */
 }
+
 
 .header-tag {
   margin: 0 auto;
@@ -27,24 +30,27 @@ body {
   font-family: "Kaisei HarunoUmi", serif;
   font-weight: 500;
 
+
   /* Centraliza o texto vertical e horizontalmente */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container .title {
- 
+
+.title {
+  text-align: center;
   width: 1049px;
   height: 141px;
- margin-left: auto;
- margin-right: auto;
-  text-align: center;
+  top: 218px;
+  left: 195px;
+  padding-top: 100px;
   font-size: 38px;
   margin-bottom: 50px;
   color: #222;
   font-family: "Georgia", serif;
 }
+
 
 .cards {
   display: flex;
@@ -52,6 +58,7 @@ body {
   gap: 25px;
   flex-wrap: wrap;
 }
+
 
 .card {
   background: white;
@@ -62,15 +69,18 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+
 .circle {
   width: 55px;
   height: 55px;
   background: #71B1C2;
   border-radius: 50%;
 
+
   display: flex;
   align-items: center;
   justify-content: center;
+
 
   font-family: "Actor", sans-serif;
   font-weight: 400;
@@ -78,6 +88,7 @@ body {
   line-height: 100%;
   letter-spacing: 0;
 }
+
 
 .card h3 {
   margin-bottom: 8px;
@@ -99,6 +110,7 @@ body {
   letter-spacing: 0;
 }
 
+
 .card button {
   background: #4aa4af;
   color: white;
@@ -109,6 +121,69 @@ body {
   font-weight: 500;
 }
 
+
 .card button:hover {
   background: #3a8d96;
 }
+
+
+/* ============================ */
+/*      TELINHA / MODAL         */
+/* ============================ */
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* fica por cima de tudo */
+}
+
+
+.modal-content {
+  background: #ffffff;
+  padding: 24px 32px;
+  border-radius: 22px;
+  min-width: 280px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  font-family: "Inter", sans-serif;
+}
+
+
+.modal-content h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: #222;
+}
+
+
+.modal-senha {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #71B1C2;
+}
+
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  background: #4aa4af;
+  color: #fff;
+}
+
+
+.modal-button:hover {
+  background: #3a8d96;
+}
+
+

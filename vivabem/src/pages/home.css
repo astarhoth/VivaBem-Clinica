@@ -1,26 +1,25 @@
 .geral {
   display: flex;
   align-items: center; 
- 
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(224, 224, 224);
-
 }
 
 .texto {
   flex: 1;
   text-align: left; /* deixa o texto alinhado à direita */
-  margin-left: 30px;
+  margin-left: 10%;
 
 }
 
 
 .texto h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 3.3rem;
+  margin-bottom: 35px;
 }
 
 .texto p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 20px;
 }
 
@@ -39,7 +38,7 @@
 
 .geral .imagem img {
   width: 100%;
-  max-width: 400px; /* controla o tamanho da imagem */
+  max-width: 450px; /* controla o tamanho da imagem */
   height: auto;
 
  
@@ -64,4 +63,11 @@
     border: none;
     border-radius:40px;
     padding: 10px 20px;
+}
+.bloco h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+.bloco p{
+  font-size: 17px;
 }
