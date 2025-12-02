@@ -13,7 +13,7 @@ export default function Header() {
 
        <nav className="nav">
         <Link to="/selecionar-senha">Gerar senha</Link>
-        <Link to="/chamar-paciente">Chamar paciente</Link>
+        <Link to="/chamar-paciente">Painel TV</Link>
         <Link to="/senha-recepcionista">Recepcionista</Link>
       </nav> 
     </header>
