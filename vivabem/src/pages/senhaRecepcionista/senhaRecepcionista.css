@@ -193,7 +193,12 @@
 }
 /* vivabem/src/pages/chamarPaciente/chamarPaciente.css */
 .container-chamar { padding: 20px; }
-.btn-chamar { font-size: 18px; padding: 12px 20px; margin: 10px 0; }
+.btn-chamar { 
+  font-size: 18px; 
+  padding: 12px 20px; 
+  margin: 10px 0; 
+  margin-left: 265px;
+}
 .fila-resumo { margin-bottom: 12px; }
 
 .container-recepcao {

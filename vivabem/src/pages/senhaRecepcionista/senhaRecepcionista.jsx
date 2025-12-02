@@ -1,6 +1,6 @@
 // vivabem/src/pages/senhaRecepcionista/senhaRecepcionista.jsx
 import React, { useState, useEffect } from "react";
-import { listarSenhasAtivas, listarTodasSenhas, gerarSenha, initGuiches } from "../../utils/filaSenhas";
+import { listarSenhasAtivas, listarTodasSenhas, gerarSenha, initGuiches,chamarProximaSenha} from "../../utils/filaSenhas";
 import "./senhaRecepcionista.css";
 
 export default function SenhaRecepcionista(){
@@ -21,17 +21,32 @@ export default function SenhaRecepcionista(){
     gerarSenha(tipo);
     refresh();
   }
+   function chamar() {
+    const chamado = chamarProximaSenha();
+
+    // 1) NENHUMA SENHA DISPONÍVEL
+    if (!chamado) {
+      alert("Nenhuma senha disponível para chamar.");
+      return;
+    }
+
+    // 2) TEM SENHA, MAS NÃO TEM GUICHÊ DISPONÍVEL
+    if (chamado.error) {
+      alert(chamado.message);
+      return;
+    }
+
+    // 3) SUCESSO — SENHA CHAMADA
+    refresh();
+  }
+
 
   return (
     <div className="container-recepcao">
       <h1>Painel da Recepcionista</h1>
-      <div className="controls">
-        <button onClick={()=>emitir("SP")}>Emitir SP</button>
-        <button onClick={()=>emitir("SE")}>Emitir SE</button>
-        <button onClick={()=>emitir("SG")}>Emitir SG</button>
-        <button onClick={()=>refresh()}>Atualizar</button>
-      </div>
-
+      <button onClick={chamar} className="btn-chamar">
+        Chamar Próxima Senha
+      </button>
       <h3>Senhas na fila (ativas)</h3>
       <ul>
         {filaAtiva.map(s => (

@@ -9,6 +9,7 @@ import "./chamarPaciente.css";
 export default function ChamarPaciente() {
   const [ultimasChamadas, setUltimasChamadas] = useState([]);
   const [fila, setFila] = useState([]);
+  const [senhaAtual, setSenhaAtual] = useState(null);
 
   function getUltimas() {
     const todas = listarTodasSenhas()
@@ -19,40 +20,33 @@ export default function ChamarPaciente() {
   }
 
   function refresh() {
+    const todas = listarTodasSenhas()
+      .filter(s => s.chamadoEm)
+      .sort((a, b) => b.chamadoEm - a.chamadoEm);
+
+    setUltimasChamadas(todas.slice(0, 5));
+    setSenhaAtual(todas[0] || null); // último chamado
     setFila(listarSenhasAtivas());
-    setUltimasChamadas(getUltimas());
   }
 
   useEffect(() => {
     refresh();
   }, []);
 
-  function chamar() {
-    const chamado = chamarProximaSenha();
-
-    // 1) NENHUMA SENHA DISPONÍVEL
-    if (!chamado) {
-      alert("Nenhuma senha disponível para chamar.");
-      return;
-    }
-
-    // 2) TEM SENHA, MAS NÃO TEM GUICHÊ DISPONÍVEL
-    if (chamado.error) {
-      alert(chamado.message);
-      return;
-    }
-
-    // 3) SUCESSO — SENHA CHAMADA
-    refresh();
-  }
-
   return (
     <div className="container-chamar">
-      <h1>Painel da Atendente</h1>
+      <h1>Senha chamada</h1>
 
-      <button onClick={chamar} className="btn-chamar">
-        Chamar Próxima Senha
-      </button>
+      {senhaAtual ? (
+        <div className="senha-atual">
+          <h2>
+            <strong>{senhaAtual.id}</strong> — Tipo: {senhaAtual.tipo} — Guichê:{" "}
+            {senhaAtual.guiche}
+          </h2>
+        </div>
+      ) : (
+        <h2>Nenhuma senha chamada ainda</h2>
+      )}
 
       <h3>Últimas 5 chamadas</h3>
       <ol>
