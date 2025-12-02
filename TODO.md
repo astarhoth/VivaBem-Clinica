@@ -1,6 +1,5 @@
 # TODO – VivaBem Clínica
 
-- [ ] Exibir a senha atual no painel
-- [ ] Atualizar painel automaticamente
+- [ ] Limpar painel automaticamente após 1h 
 - [ ] Melhorar layout do recepcionista
 - [ ] Criar sistema de áudio
