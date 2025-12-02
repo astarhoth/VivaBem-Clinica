@@ -191,3 +191,46 @@
       min-height: auto;
   }
 }
+/* vivabem/src/pages/chamarPaciente/chamarPaciente.css */
+.container-chamar { padding: 20px; }
+.btn-chamar { font-size: 18px; padding: 12px 20px; margin: 10px 0; }
+.fila-resumo { margin-bottom: 12px; }
+
+.container-recepcao {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff; /* azul bem claro */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.container-recepcao h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #1d6fb8; /* azul mais forte */
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.controls button {
+  padding: 12px 20px;
+  background: #4da3ff; /* azul claro */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #1d6fb8; /* azul mais escuro ao passar o mouse */
+}

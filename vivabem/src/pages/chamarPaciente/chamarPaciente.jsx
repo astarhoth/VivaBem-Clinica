@@ -1,38 +1,68 @@
-import React from 'react';
-import './ChamarPaciente.css'; // Importa o CSS renomeado
-
+import React, { useState, useEffect } from "react";
+import {
+  listarSenhasAtivas,
+  chamarProximaSenha,
+  listarTodasSenhas
+} from "../../utils/filaSenhas";
+import "./chamarPaciente.css";
 
 export default function ChamarPaciente() {
+  const [ultimasChamadas, setUltimasChamadas] = useState([]);
+  const [fila, setFila] = useState([]);
+
+  function getUltimas() {
+    const todas = listarTodasSenhas()
+      .filter(s => s.chamadoEm)
+      .sort((a, b) => b.chamadoEm - a.chamadoEm);
+
+    return todas.slice(0, 5);
+  }
+
+  function refresh() {
+    setFila(listarSenhasAtivas());
+    setUltimasChamadas(getUltimas());
+  }
+
+  useEffect(() => {
+    refresh();
+  }, []);
+
+  function chamar() {
+    const chamado = chamarProximaSenha();
+
+    // 1) NENHUMA SENHA DISPONÍVEL
+    if (!chamado) {
+      alert("Nenhuma senha disponível para chamar.");
+      return;
+    }
+
+    // 2) TEM SENHA, MAS NÃO TEM GUICHÊ DISPONÍVEL
+    if (chamado.error) {
+      alert(chamado.message);
+      return;
+    }
+
+    // 3) SUCESSO — SENHA CHAMADA
+    refresh();
+  }
+
   return (
-    <div className="chamar-paciente-container">
-      <main className="chamar-paciente-content">
-        
-        {/*senha atual */}
-        <div className="left-column">
-          <h1 className="section-title">Senha</h1>
-          <div className="underline"></div>
-          
-          <div className="ticket-card">
-            {/* texto do código da senha */}
-            <span className="ticket-code"></span>
-          </div>
-        </div>
+    <div className="container-chamar">
+      <h1>Painel da Atendente</h1>
 
-        {/* já chamadas */}
-        <div className="right-column">
-          <div className="history-card">
-            <h2 className="history-title">Já Chamadas</h2>
-            <div className="history-underline"></div>
-            
-            {/* lista de senhas anteriores */}
-            <div className="history-list">
-               {/* Exemplo de itens vazios ou preenchidos */}
-               <div className="history-item-placeholder"></div>
-            </div>
-          </div>
-        </div>
+      <button onClick={chamar} className="btn-chamar">
+        Chamar Próxima Senha
+      </button>
 
-      </main>
+      <h3>Últimas 5 chamadas</h3>
+      <ol>
+        {ultimasChamadas.map(s => (
+          <li key={s.id}>
+            <strong>{s.id}</strong> — Tipo: {s.tipo} — Guichê: {s.guiche} — Hora:{" "}
+            {new Date(s.chamadoEm).toLocaleTimeString()}
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

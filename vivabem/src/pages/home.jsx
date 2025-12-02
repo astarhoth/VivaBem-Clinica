@@ -27,7 +27,7 @@ export default function Home() {
          <div className="bloco">
           <h2>Recepcionista</h2>
           <p>Mostrar senha para chamar o paciente</p>
-           <Link to="/senha-recepcionista"><button>Painel Recepcionista</button></Link>
+          <Link to="/senha-recepcionista"><button>Painel Recepcionista</button></Link>
         </div>
       </div></>
   );

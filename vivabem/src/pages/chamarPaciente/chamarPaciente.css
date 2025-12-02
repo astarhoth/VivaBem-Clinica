@@ -127,3 +127,74 @@
     max-width: 100%;
   }
 }
+/* vivabem/src/pages/chamarPaciente/chamarPaciente.css */
+.container-chamar { padding: 20px; }
+.btn-chamar { font-size: 18px; padding: 12px 20px; margin: 10px 0; }
+.fila-resumo { margin-bottom: 12px; }
+
+.container-chamar {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff; /* azul bem claro */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-family: Arial, sans-serif;
+}
+
+.container-chamar h1 {
+  text-align: center;
+  color: #1d6fb8;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.btn-chamar {
+  display: block;
+  margin: 0 auto 30px;
+  margin-left: auto;
+  padding: 15px 25px;
+  background: #4da3ff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-chamar:hover {
+  background: #1c6bb3;
+}
+
+/* Título da lista */
+.container-chamar h3 {
+  margin-bottom: 15px;
+  color: #1d6fb8;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Lista das últimas chamadas */
+.container-chamar ol {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+}
+
+.container-chamar li {
+  margin: 8px 0;
+  font-size: 16px;
+  padding: 8px;
+  border-bottom: 1px solid #d8e7f8;
+}
+
+.container-chamar li:last-child {
+  border-bottom: none;
+}
+
+.container-chamar strong {
+  color: #1c6bb3;
+}

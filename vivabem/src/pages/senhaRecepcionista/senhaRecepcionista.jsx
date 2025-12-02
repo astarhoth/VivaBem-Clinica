@@ -1,75 +1,60 @@
-import React, { useState } from "react";
-import "./senhaRecepcionista.css"; 
+// vivabem/src/pages/senhaRecepcionista/senhaRecepcionista.jsx
+import React, { useState, useEffect } from "react";
+import { listarSenhasAtivas, listarTodasSenhas, gerarSenha, initGuiches } from "../../utils/filaSenhas";
+import "./senhaRecepcionista.css";
 
-export default function SenhaRecepcionista() {
-  // senhas fake
-  const [senhaAtual, setSenhaAtual] = useState({ codigo: 'N005', tipo: 'NORMAL' });
-  const [fila, setFila] = useState([
-    { codigo: 'P002', tipo: 'Preferencial', status: 'Aguardando' },
-    { codigo: 'N006', tipo: 'Normal', status: 'Aguardando' },
-    { codigo: 'N007', tipo: 'Normal', status: 'Aguardando' },
-    { codigo: 'N008', tipo: 'Normal', status: 'Aguardando' },
-  ]); // ta funcionando so pra mostar a estrutura
+export default function SenhaRecepcionista(){
+  const [filaAtiva, setFilaAtiva] = useState([]);
+  const [todas, setTodas] = useState([]);
 
-  const chamarProximo = () => {
-    if (fila.length > 0) {
-      const proximo = fila[0];
-      setSenhaAtual({ codigo: proximo.codigo, tipo: proximo.tipo.toUpperCase() });
-      setFila(fila.slice(1));
-    } else {
-      alert("Fila vazia!");
-    }
-  };
+  useEffect(()=>{
+    initGuiches(3); // inicializa 3 guichês por padrão (ajuste se quiser)
+    refresh();
+  },[]);
+
+  function refresh(){
+    setFilaAtiva(listarSenhasAtivas());
+    setTodas(listarTodasSenhas());
+  }
+
+  function emitir(tipo){
+    gerarSenha(tipo);
+    refresh();
+  }
 
   return (
-    <div className="chamar-paciente-container">
-      
-      <h1 className="page-heading">CHAMAR PACIENTE</h1>
+    <div className="container-recepcao">
+      <h1>Painel da Recepcionista</h1>
+      <div className="controls">
+        <button onClick={()=>emitir("SP")}>Emitir SP</button>
+        <button onClick={()=>emitir("SE")}>Emitir SE</button>
+        <button onClick={()=>emitir("SG")}>Emitir SG</button>
+        <button onClick={()=>refresh()}>Atualizar</button>
+      </div>
 
-      <main className="chamar-paciente-content">
-        
-        {/* charmar */}
-        <div className="left-column">
-          <div className="action-card">
-            <h2 className="card-title">Em Atendimento</h2>
-            
-            {/* senha em atendimento */}
-            <div className="ticket-display-box">
-              <span className="ticket-type">{senhaAtual.tipo}</span>
-              <span className="ticket-code">{senhaAtual.codigo}</span>
-            </div>
+      <h3>Senhas na fila (ativas)</h3>
+      <ul>
+        {filaAtiva.map(s => (
+          <li key={s.id}>{s.id} — {s.tipo} — Criada: {new Date(s.criadoEm).toLocaleTimeString()}</li>
+        ))}
+      </ul>
 
-            {/* botões */}
-            <div className="button-group">
-                <button className="btn-primary" onClick={chamarProximo}>
-                    Chamar Próximo
-                </button>
-                <button className="btn-secondary">
-                    Chamar Novamente
-                </button>
-            </div>
-          </div>
-        </div>
-
-        {/* fila */}
-        <div className="right-column">
-          <div className="queue-card">
-            <h2 className="card-title">Próximos da Fila</h2>
-            
-            <div className="queue-list">
-               {fila.map((item, index) => (
-                   <div key={index} className="queue-item">
-                       <span className="q-code">{item.codigo}</span>
-                       <span className="q-type">{item.tipo}</span>
-                       <span className="q-status">{item.status}</span>
-                   </div>
-               ))}
-               {fila.length === 0 && <p className="empty-msg">Fila vazia</p>}
-            </div>
-          </div>
-        </div>
-
-      </main>
+      <h3>Histórico (todas)</h3>
+      <div style={{maxHeight:200, overflow:"auto"}}>
+        <table>
+          <thead><tr><th>Id</th><th>Tipo</th><th>Chamado</th><th>Guichê</th></tr></thead>
+          <tbody>
+            {todas.map(s => (
+              <tr key={s.id}>
+                <td>{s.id}</td>
+                <td>{s.tipo}</td>
+                <td>{s.chamadoEm ? new Date(s.chamadoEm).toLocaleTimeString() : ""}</td>
+                <td>{s.guiche || ""}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

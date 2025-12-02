@@ -1,67 +1,33 @@
-import React from "react";
+// vivabem/src/pages/selecionarSenha/selecionarSenha.jsx
+import React, { useState } from "react";
+import { gerarSenha } from "../../utils/filaSenhas";
 import "./selecionarSenha.css";
 
+export default function SelecionarSenha() {
+  const [ultima, setUltima] = useState(null);
 
-export default function SelecionarSenha({ onSelecionar, senhaGerada, setSenhaGerada }) {
+  function emitir(tipo) {
+    const s = gerarSenha(tipo);
+    setUltima(s);
+    alert(`Senha ${s.id} gerada! Validade até ${new Date(s.expiry).toLocaleTimeString()}`);
+  }
+
   return (
-    <div className="container">
-      <div className="header-tag">Tipo de senha</div>
-
-
-      <h1 className="title">
-        Selecione o seu tipo<br />de Senha
-      </h1>
-
-
-      <div className="cards">
-        <div className="card">
-          <div className="circle">SP</div>
-          <h3>Senha Prioritária</h3>
-          <p>Pessoas com deficiência, gestante, idosos, lactantes.</p>
-          <button onClick={() => onSelecionar("prioritaria")}>
-            Selecionar
-          </button>
-        </div>
-
-
-        <div className="card">
-          <div className="circle">SG</div>
-          <h3>Senha Geral</h3>
-          <p>Público geral, funciona por ordem de chegada.</p>
-          <button onClick={() => onSelecionar("geral")}>
-            Selecionar
-          </button>
-        </div>
-
-
-        <div className="card">
-          <div className="circle">SE</div>
-          <h3>Senha Exame</h3>
-          <p>Pacientes já cadastrados, para exames ou coletas.</p>
-          <button onClick={() => onSelecionar("exame")}>
-            Selecionar
-          </button>
-        </div>
+    <div className="container-selecionar">
+      <h1>Emissão de Senha</h1>
+      <div className="botoes">
+        <button onClick={() => emitir("SP")}>Emitir SP (Prioritária)</button>
+        <button onClick={() => emitir("SE")}>Emitir SE (Retirada de Exames)</button>
+        <button onClick={() => emitir("SG")}>Emitir SG (Geral)</button>
       </div>
-
-
-      {/* Telinha / modal com a senha */}
-      {senhaGerada && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2>Sua senha foi gerada!</h2>
-            <p className="modal-senha">{senhaGerada}</p>
-            <button
-              className="modal-button"
-              onClick={() => setSenhaGerada("")}
-            >
-              OK
-            </button>
-          </div>
+      {ultima && (
+        <div className="info">
+          <h2>Senha emitida</h2>
+          <p><strong>{ultima.id}</strong></p>
+          <p>Tipo: {ultima.tipo}</p>
+          <p>Validade: {new Date(ultima.expiry).toLocaleString()}</p>
         </div>
       )}
     </div>
   );
 }
-
-

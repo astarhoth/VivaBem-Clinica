@@ -7,7 +7,7 @@ export default function Header() {
     <header className="header">
       <div className="logo">
           <img src={logo} alt="" />
-          <a href={telaPrincipal}><h1 className="logo_nome">Viva Bem</h1> </a>  
+          <h1 className="logo_nome">Viva Bem</h1>   
       </div>
 
 
